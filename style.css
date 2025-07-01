@@ -1,0 +1,23 @@
+nav{
+    background-color: maroon;
+    color: white;
+    align-items: end;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+nav a {
+color: white;
+}
