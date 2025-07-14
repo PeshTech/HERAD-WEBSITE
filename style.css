@@ -1,239 +1,285 @@
-nav{
-    background-color: maroon;
-    color: white;
-    align-items: end;
-}
-
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: white;
-    color: #333;
-    line-height: 1.6;
-}
-
-nav ul{
-    display: flex;
-    list-style: none;
-    align-items: center;
-    justify-content: space-between;
-    
-}
-nav a {
-color: white;
-}
-
-
-
-
-
-
-/* ==============================
-   Base Styles & Reset
-   ============================== */
+/* Remove browser's default spacing and make elements easier to size */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Includes padding & border inside width/height */
 }
 
+/* Set default font, background color, text color, and line spacing for the whole page */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: white; /* white page background */
-  color: maroon;           /* main text color */
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  position: relative;
+  background-color: white; /* Clean white background */
+  line-height: 1.6; /* Improves text readability */
 }
 
-/* ==============================
-   Background Image on Main Content
-   ============================== */
+
+/* NAVIGATION BAR */
+
+/* Style the logo image inside the navbar */
+.logo img {
+  max-width: 200px; /* Prevents logo from getting too big */
+  height: auto;     /* Maintains natural aspect ratio */
+}
+
+/* Navigation container styles */
+nav {
+  background-color: maroon; /* Brand color for navbar background */
+  padding: 15px 20px;       /* Adds breathing space inside navbar */
+  display: flex;            /* Align logo and links side-by-side */
+  justify-content: space-between; /* Logo goes left, links go right */
+  align-items: center;      
+  flex-wrap: wrap;          /* Allows nav items to stack on small screens */
+}
+
+/* Style the navigation links container */
+nav ul {
+  display: flex;        /* Arrange links horizontally */
+  gap: 20px;            /* Space between links */
+  list-style: none;     /* Remove bullet points from list */
+}
+
+/* Style for each individual nav link */
+nav a {
+  color: white;                 /* White text for contrast on maroon background */
+  text-decoration: none;       /* Remove underlines */
+  padding: 8px 12px;           /* Space around each link */
+  transition: background 0.3s; /* Smooth effect when hovering */
+}
+
+/* Visual feedback when hovering over nav links */
+nav a:hover {
+  background-color:white; /* Background becomes white */
+  color: maroon;           /* Text becomes maroon for contrast */
+  border-radius: 4px;      /* Rounded corners on hover */
+}
+
+
+/*  HERO SECTION */
+
+/* Large background image section with intro text */
 main.content {
   position: relative;
-  background: url('your-image.jpg') no-repeat center center fixed; /* replace with your image */
-  background-size: cover;
-  padding: 60px 20px;
-  color: white; /* white text over image */
+  background-image: url('images/indexbg.jpg'); /* Hero background image */
+  background-size: cover;     /* Cover entire container */
+  background-position: center;/* Keep image centered */
+  padding: 120px 20px;        /* Space inside the hero section */
+  color: white;
+  min-height: 550px;          /* Set minimum height of image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* Overlay to improve text readability */
+/* Add a dark overlay on top of the background image for better text visibility */
 main.content::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
+  top: 0;
+  left: 0;
   height: 100%;
-  background-color: rgba(128, 0, 0, 0.5); /* semi-transparent maroon overlay */
-  z-index: -1;
+  width: 100%;
+  background-color:  black; /* Semi-transparent black */
+  z-index: -1; /* Push behind the text */
 }
 
-/* ==============================
-   Navigation Bar
-   ============================== */
-nav {
-  background-color: maroon;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-nav div:first-child {
-  font-weight: bold;
-  font-size: 24px;
-  color: white;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 12px;
-  transition: background 0.3s ease;
-}
-
-nav a:hover {
-  background-color: white;
-  color: maroon;
-  border-radius: 4px;
-}
-
-/* ==============================
-   Intro Section
-   ============================== */
+/* Container for hero text */
 .intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 800px;
+  color: white;
+  text-shadow: 2px 2px 8px black; /* Shadow makes text readable */
 }
 
+/* Main headline */
 .intro h1 {
-  font-size: 36px;
-  color: white; /* on dark background */
+  font-size: 42px;
+  font-weight: bold;
+  color: yellow; /* Bright yellow for emphasis */
   margin-bottom: 20px;
 }
 
+/* Supporting paragraph text */
 .intro p {
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 30px;
 }
 
-/* Button styled in maroon and white */
+/* Button that links to products */
 .btn {
   display: inline-block;
-  padding: 12px 25px;
-  background-color: white; /* white button */
+  padding: 14px 28px;
+  background-color: #ffcc00; /* Bright yellow button */
   color: maroon;
-  border-radius: 5px;
-  text-decoration: none;
+  border-radius: 6px;
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  transition: all 0.3s ease;
 }
 
+/* Button hover effect */
 .btn:hover {
   background-color: maroon;
   color: white;
   border: 1px solid white;
 }
 
-/* ==============================
-   Footer Styles
-   ============================== */
-footer {
-  background-color: maroon;
-  color: white;
-  padding: 40px 20px;
-  font-size: 14px;
+
+/*PRODUCTS SECTION (Home Products) */
+
+/* Outer section for the product showcase */
+.home-products {
+  padding: 60px 20px;
+  background-color: #fff8f0; /* Soft beige background */
+  text-align: center;
 }
 
+/* Section heading */
+.home-products h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: maroon;
+}
+
+/* Container that holds all product cards */
+.product-grid {
+ display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Make it responsive */
+}
+
+/* Individual product card box */
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 280px;
+  box-shadow: 0 4px 8px black; /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Slight lift when hovering over a card */
+.product-card:hover {
+  transform: translatey(-5px);
+}
+
+/* Product image inside each card */
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Keeps image ratio and fills area */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Product title */
+.product-card h3 {
+  font-size: 18px;
+  color: maroon;
+}
+
+
+/* --FOOTER SECTION (Bottom of Page)--*/
+
+/* Entire footer styling */
+footer {
+  background-color: #4b0000; /* Deep maroon for contrast */
+  color: white;
+  padding: 50px 30px;
+}
+
+/* Layout for top part of footer (4 sections) */
 .footer-top {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
   margin-bottom: 20px;
 }
 
+/* Common styles for each footer section */
 .footer-section {
-  flex: 1 1 250px;
+  flex: 1 1 220px;
+  min-width: 220px;
 }
 
-.footer-section h3,
+/* Logo in the footer centered */
+.footer-section.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-section.about img {
+  width: 180px;
+  max-width: 100%;
+  border-radius: 1px;
+  box-shadow: 0 0 15px rgba(255, 204, 112, 0.3); /* Glow effect */
+}
+
+/* Footer section titles */
 .footer-section h4 {
-  color: white;
-  margin-bottom: 10px;
+  color: #ffcc70;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 6000;
 }
 
+/* Unordered lists like contacts and quick links */
 .footer-section ul {
   list-style: none;
   padding: 0;
 }
 
+/* Each footer list item (e.g., contact or link) */
 .footer-section ul li {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
 }
 
+/* Icons in footer (e.g., phone, email) */
+.footer-section img {
+  margin-right: 10px;
+  width: 30px;
+}
+
+/* Footer links */
 .footer-section a {
   color: white;
-  text-decoration: underline;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
+/* Footer link hover style */
 .footer-section a:hover {
-  color: white; /* keep white on hover for simplicity */
+  color: #ffcc70;
+  text-decoration: underline;
 }
 
+/* Social media icons */
 .social-icons img {
-  width: 18px;
-  vertical-align: middle;
-  margin-right: 8px;
+  width: 30px;
+  margin-right: 10px;
 }
 
+/* Business name below social links */
+.footer-section p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* Bottom copyright section */
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid #660000; /* slightly darker maroon */
-  padding-top: 15px;
-  font-size: 13px;
-  color: white;
+  border-top: 1px solid #800000;
+  padding-top: 20px;
+  font-size: 15px;
+  color: #e0e0e0;
 }
-
-/* ==============================
-   Responsive Styles
-   ============================== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .footer-top {
-    flex-direction: column;
-  }
-
-  .intro h1 {
-    font-size: 28px;
-  }
-
-  .intro p {
-    font-size: 16px;
-  }
-}
-
-
-
-
-
 
 

@@ -1,28 +1,22 @@
-/* Reset default styles */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body base styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   background-color: white;
   color: #333;
   line-height: 1.6;
 }
 
-/* Justify all paragraph and dd text */
-p, dd {
-  text-align: justify;
-}
-
-/* Navigation styles */
+/* Header styles */
 header {
   background-color: maroon;
-  padding: 1em 0;
   color: white;
+  padding: 1em 0;
 }
 
 nav {
@@ -34,155 +28,173 @@ nav {
   padding: 0 1em;
 }
 
-nav div {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: white;
+/* Style the logo image inside the navbar */
+.logo img {
+  max-width: 200px; /* Prevents logo from getting too big */
+  height: auto;     /* Maintains natural aspect ratio */
 }
 
-nav ul {
+.nav-links {
   list-style: none;
   display: flex;
   gap: 1em;
 }
 
-nav ul li a {
+.nav-links a {
   text-decoration: none;
   color: white;
   padding: 0.5em 1em;
-  transition: background 0.3s ease;
+  transition: 0.3s;
 }
 
-nav ul li a:hover {
+.nav-links a:hover {
   background-color: white;
   color: maroon;
   border-radius: 5px;
 }
 
-/* Section base styling */
-section {
+/* Section styles */
+.section {
   max-width: 1000px;
   margin: 2em auto;
   padding: 2em 1em;
   border-radius: 10px;
 }
 
-/* Different background colors for each section */
-section:nth-of-type(1) {
-  background-color: #f5f5f5; /* About - light gray */
+.about {
+  background-color: #f5f5f5;
 }
 
-section:nth-of-type(2) {
-  background-color: #fff0f5; /* Vision - light pinkish */
+.vision {
+  background-color: #fff0f5;
 }
 
-section:nth-of-type(3) {
-  background-color: #fdf6e3; /* Mission - light cream */
+.mission {
+  background-color: #fdf6e3;
 }
 
-section:nth-of-type(4) {
-  background-color: #f0f8ff; /* Core Values - light blue */
+.values {
+  background-color: #f0f8ff;
 }
 
-/* Section headings */
-section h1, section h2 {
+/* Headings */
+.section h1,
+.section h2 {
   color: maroon;
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
-/* Core values */
 dl dt {
   font-weight: bold;
   color: maroon;
   margin-top: 1em;
+  text-align: center;
 }
 
-/* Footer styles (no borders/lines) */
+p, dd {
+  text-align: center;
+}
+
+/* --FOOTER SECTION (Bottom of Page)--*/
+
+/* Entire footer styling */
 footer {
-  background-color: maroon;
+  background-color: #4b0000; /* Deep maroon for contrast */
   color: white;
-  padding: 2em 1em 1em;
+  padding: 50px 30px;
 }
 
+/* Layout for top part of footer (4 sections) */
 .footer-top {
   display: flex;
   flex-wrap: wrap;
-  gap: 2em;
-  max-width: 1200px;
-  margin: auto;
   justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 20px;
 }
 
+/* Common styles for each footer section */
 .footer-section {
-  flex: 1 1 250px;
+  flex: 1 1 220px;
+  min-width: 220px;
 }
 
-.footer-section h3,
+/* Logo in the footer centered */
+.footer-section.about {
+  background-color:#4b0000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-section.about img {
+  width: 180px;
+  max-width: 100%;
+  border-radius: 1px;
+  box-shadow: 0 0 15px rgba(255, 204, 112, 0.3); /* Glow effect */
+}
+
+/* Footer section titles */
 .footer-section h4 {
-  margin-bottom: 0.5em;
-  display: inline-block;
-  padding-bottom: 0.3em;
+  color: #ffcc70;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 6000;
 }
 
+/* Unordered lists like contacts and quick links */
 .footer-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 0.5em;
-}
-
-.footer-section ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 2em;
-  padding-top: 1em;
-  font-size: 0.9em;
- 
-}
-
-
-
-.footer-bottom a {
-  color: white;
-  text-decoration: underline;
-}
-
-/* Social icons */
-.social-icons {
   list-style: none;
   padding: 0;
 }
 
-.social-icons li {
+/* Each footer list item (e.g., contact or link) */
+.footer-section ul li {
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
-  margin-bottom: 0.5em;
 }
 
+/* Icons in footer (e.g., phone, email) */
+.footer-section img {
+  margin-right: 10px;
+  width: 30px;
+}
+
+/* Footer links */
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Footer link hover style */
+.footer-section a:hover {
+  color: #ffcc70;
+  text-decoration: underline;
+}
+
+/* Social media icons */
 .social-icons img {
-  width: 20px;
-  height: 20px;
-  margin-right: 0.5em;
+  width: 30px;
+  margin-right: 10px;
 }
 
-/* Responsive layout */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-
-  .footer-top {
-    flex-direction: column;
-  }
+/* Business name below social links */
+.footer-section p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffd700;
 }
+
+/* Bottom copyright section */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #800000;
+  padding: 20px;
+  font-size: 15px;
+  color: #e0e0e0;
+}
+
+
