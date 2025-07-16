@@ -55,46 +55,94 @@ nav ul li a:focus {
   outline: none;
 }
 
-/* Main section */
+ /* Main section styling */
 main {
   max-width: 1100px;
-  margin: 30px auto;
-  padding: 0 15px;
+  margin: 30px auto;         /* Center the main content */
+  padding: 0 15px;           /* Horizontal padding */
 }
 
+/* Main heading */
 main h1 {
   text-align: center;
-  color: #800000;
+  color: #800000;            /* Maroon color */
   margin-bottom: 40px;
   font-size: 2.5rem;
   letter-spacing: 1.5px;
 }
 
-/* Products */
-.product {
-  background-color: #fff0f0;
-  border: 2px solid #800000;
-  border-radius: 10px;
+/* Container for each product (text + image) */
+.product-container {
+  display: flex;                         /* Use Flexbox */
+  flex-wrap: wrap;                       /* Allow wrapping on smaller screens */
+  justify-content: space-between;       /* Space between text and image */
+  background-color: #fff0f0;            /* Light pink background */
+  border: 2px solid #800000;            /* Maroon border */
+  border-radius: 10px;                  /* Rounded corners */
   padding: 20px;
   margin-bottom: 30px;
-  box-shadow: 0 2px 8px rgba(128, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(128, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease;      /* Smooth hover effect */
 }
 
-.product:hover {
+/* Scale up on hover */
+.product-container:hover {
   transform: scale(1.02);
 }
 
-.product h2 {
+/* Left column: Text content */
+.product-text {
+  flex: 1 1 55%;                        /* Take about 55% of the width */
+  padding-right: 20px;                 /* Space between text and image */
+  font-size: 1rem;
+  color: #4d0000;
+}
+
+.product-text h2 {
   margin-bottom: 12px;
   color: #800000;
 }
 
-.product p {
+.product-text p {
   margin-bottom: 8px;
-  color: #4d0000;
-  font-size: 1rem;
 }
+
+.product-text ul {
+  margin-top: 5px;
+  padding-left: 20px;                  /* Indent list items */
+}
+
+/* Right column: Image */
+.product-image {
+  flex: 1 1 40%;                        /* Take about 40% of the width */
+  display: flex;
+  align-items: center;                 /* Vertically center image */
+  justify-content: center;            /* Horizontally center image */
+}
+
+.product-image img {
+  max-width: 100%;                     /* Scale image to container width */
+  height: auto;
+  border-radius: 10px;                 /* Rounded image corners */
+  object-fit: cover;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;           /* Stack text above image */
+  }
+
+  .product-text {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .product-image {
+    justify-content: flex-start;
+  }
+}
+
 
 /* --FOOTER SECTION (Bottom of Page)--*/
 
