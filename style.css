@@ -263,18 +263,6 @@ footer {
   text-decoration: underline;
 }
 
-/* Social media icons */
-.social-icons img {
-  width: 30px;
-  margin-right: 10px;
-}
-
-/* Business name below social links */
-.footer-section p {
-  margin-top: 10px;
-  font-weight: bold;
-  color:white;
-}
 
 /* Bottom copyright section */
 .footer-bottom {
