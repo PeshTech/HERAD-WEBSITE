@@ -23,7 +23,11 @@ body {
 
 /* Navigation container styles */
 nav {
+<<<<<<< HEAD
   background-color: #C77D83; /* Brand color for navbar background */
+=======
+  background-color: black; /* Brand color for navbar background */
+>>>>>>> 056316d9e6bb97542c80de59d241ded1f5ba630f
   padding: 15px 20px;       /* Adds breathing space inside navbar */
   display: flex;            /* Align logo and links side-by-side */
   justify-content: space-between; /* Logo goes left, links go right */
@@ -36,6 +40,7 @@ nav ul {
   display: flex;        /* Arrange links horizontally */
   gap: 20px;            /* Space between links */
   list-style: none;     /* Remove bullet points from list */
+  font-size: 20px;
 }
 
 /* Style for each individual nav link */
@@ -87,41 +92,43 @@ main.content::before {
 .intro {
   max-width: 800px;
   color: white;
-  text-shadow: 2px 2px 8px black; /* Shadow makes text readable */
+  text-shadow: 4px 4px 16px black; /* Shadow makes text readable */
 }
 
 /* Main headline */
 .intro h1 {
   font-size: 42px;
   font-weight: bold;
-  color: yellow; /* Bright yellow for emphasis */
+  color: white; /* Bright yellow for emphasis */
   margin-bottom: 20px;
 }
 
 /* Supporting paragraph text */
-.intro p {
+/* .intro p {
   font-size: 20px;
   line-height: 1.8;
   margin-bottom: 30px;
-}
+  color: black;
+} */
 
 /* Button that links to products */
 .btn {
   display: inline-block;
   padding: 14px 28px;
-  background-color: #ffcc00; /* Bright yellow button */
-  color: maroon;
+  background-color: maroon; /* Bright yellow button */
+  color: white;
   border-radius: 6px;
   font-weight: bold;
   font-size: 20px;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
   transition: all 0.3s ease;
+  margin-top: 50px;
 }
 
 /* Button hover effect */
 .btn:hover {
-  background-color: maroon;
+  background-color: rgb(46, 3, 3);
   color: white;
   border: 1px solid white;
 }
@@ -148,7 +155,7 @@ main.content::before {
  display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap; /* Make it responsive */
+  flex-wrap: nowrap; /* Make it responsive */
 }
 
 /* Individual product card box */
@@ -270,7 +277,7 @@ footer {
 .footer-section p {
   margin-top: 10px;
   font-weight: bold;
-  color: #ffd700;
+  color:white;
 }
 
 /* Bottom copyright section */
