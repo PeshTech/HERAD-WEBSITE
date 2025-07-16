@@ -23,11 +23,7 @@ body {
 
 /* Navigation container styles */
 nav {
-<<<<<<< HEAD
   background-color: #C77D83; /* Brand color for navbar background */
-=======
-  background-color: black; /* Brand color for navbar background */
->>>>>>> 056316d9e6bb97542c80de59d241ded1f5ba630f
   padding: 15px 20px;       /* Adds breathing space inside navbar */
   display: flex;            /* Align logo and links side-by-side */
   justify-content: space-between; /* Logo goes left, links go right */
