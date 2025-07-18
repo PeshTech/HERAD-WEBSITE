@@ -1,136 +1,238 @@
+/*
+  HERAD Cassava Products Stylesheet
+  Cleaned, Restored, and Fully Commented CSS
+*/
 
+/* Reset margin and padding across all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
+/* Make sure html and body take full height and have no margins */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Apply Roboto font and base styling */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #4d0000; /* dark maroon */
+  font-family: 'Roboto', sans-serif;
+  /* Removed background-color so background image is visible */
+  color: white; /* changed to white for contrast on background */
   line-height: 1.6;
-  padding: 20px;
+  padding-top: 120px; /* Push content down so it's not hidden under the fixed nav */
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: url('/images/background-cassava.jpeg'); /* Replace with your correct path */
+  background-size: cover;            /* Make the image cover the entire screen */
+  background-position: center;       /* Center the image */
+  background-repeat: no-repeat;      /* Prevent tiling */
+  background-attachment: fixed;      /* Keep it fixed on scroll */
+  color: white;                      /* White text for contrast */
 }
 
-/* Header and Navigation */
-header {
-  background-color: #800000; /* maroon */
-  padding: 15px 30px;
+/* Optional overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: 0;
 }
 
+/* Content should appear above the overlay */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Header Styling */
+ header {
+  background-color: #832327; /* Deep maroon */
+  /* padding: 10px 40px; */
+ 
+} 
+
+/* Navigation bar layout */
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-color: #721F23;
+  color: white;
+  border-bottom: 3px solid black;
+  
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between; /* logo left, menu right */
+  align-items: center;            /* vertical center */
+  padding: 10px 20px;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
-nav .logo {
-  color: white;
-  font-size: 1.8rem;
+.logo {
+  margin-top: 15px;
+  font-size: 40px;
   font-weight: bold;
-  letter-spacing: 2px;
+  cursor: pointer;
+  /* Vertically centered by align-items on nav */
 }
 
-nav ul {
+/* Navigation menu - horizontal list aligned right */
+.menu {
+  display: flex;              /* horizontal layout */
+  gap: 20px;                 /* spacing between links */
+  list-style: none;          /* remove bullets */
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end; /* push menu links to right */
+  align-items: center;       /* vertically center in nav */
+  /* flex-grow removed for balanced layout */
+}
+
+.menu li {
   list-style: none;
-  display: flex;
-  gap: 20px;
+  /* no extra styles needed */
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+.menu li a {
+  font-size: larger;
+  color: white;            
+  text-decoration: none;    
+  font-weight: 900;          /* heavy font weight */
+  cursor: pointer;
+  padding: 5px 10px;         /* easier clicking */
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-  background-color: #b22222; /* firebrick */
-  outline: none;
+.menu li a:hover {
+  padding: 15px 10px;
+  background-color: #A71E26;  
+  color: black;
+  cursor: pointer;
 }
 
- /* Main section styling */
+/* Main content section */
 main {
   max-width: 1100px;
-  margin: 30px auto;         /* Center the main content */
-  padding: 0 15px;           /* Horizontal padding */
+  margin: 30px auto;
+  padding: 0 15px;
 }
 
-/* Main heading */
+/* Section heading */
 main h1 {
   text-align: center;
-  color: #800000;            /* Maroon color */
+  color: white;
+  text-shadow: 6px 4px 16px black;
   margin-bottom: 40px;
-  font-size: 2.5rem;
-  letter-spacing: 1.5px;
+  font-size: 60px;
+  letter-spacing: 1.0px;
 }
 
-/* Container for each product (text + image) */
+/* Individual product section layout */
+/* Individual product section layout */
 .product-container {
-  display: flex;                         /* Use Flexbox */
-  flex-wrap: wrap;                       /* Allow wrapping on smaller screens */
-  justify-content: space-between;       /* Space between text and image */
-  background-color: #fff0f0;            /* Light pink background */
-  border: 2px solid #800000;            /* Maroon border */
-  border-radius: 10px;                  /* Rounded corners */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #eccccc; /* Light pink background */
+  border: 3px solid #800000; /* Maroon border */
+  border-radius: 40px;
   padding: 20px;
   margin-bottom: 30px;
-  box-shadow: 0 2px 8px rgba(128, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.3s ease;      /* Smooth hover effect */
+  box-shadow: 0 2px 8px rgba(128, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-/* Scale up on hover */
+/* Hover effect for product cards */
 .product-container:hover {
-  transform: scale(1.02);
+  transform: scale(0.3s);
+    /*Slightzoom*/:;
+  -webkit-transform: scale(0.3s);
+  -moz-transform: scale(0.3s);
+  -ms-transform: scale(0.3s);
+  -o-transform: scale(0.3s);
 }
 
-/* Left column: Text content */
+/* Smooth text scaling inside product card */
+.product-container h3,
+.product-container p {
+  transition: font-size 0.3s ease;
+}
+
+/* Increase text size on hover */
+.product-container:hover h3,
+.product-container:hover p {
+  font-size: 1.2em; /* Grows text slightly on hover */
+}
+
+
+
+/* Left column: product text */
 .product-text {
-  flex: 1 1 55%;                        /* Take about 55% of the width */
-  padding-right: 20px;                 /* Space between text and image */
+  flex: 1 1 55%;
+  padding-right: 20px;
   font-size: 1rem;
   color: #4d0000;
 }
 
+/* Product title */
 .product-text h2 {
   margin-bottom: 12px;
   color: #800000;
 }
 
+/* Paragraph spacing */
 .product-text p {
   margin-bottom: 8px;
 }
 
+/* List padding */
 .product-text ul {
   margin-top: 5px;
-  padding-left: 20px;                  /* Indent list items */
+  padding-left: 20px;
 }
 
-/* Right column: Image */
+/* Right column: product image */
 .product-image {
-  flex: 1 1 40%;                        /* Take about 40% of the width */
+  flex: 1 1 40%;
   display: flex;
-  align-items: center;                 /* Vertically center image */
-  justify-content: center;            /* Horizontally center image */
+  align-items: center;
+  justify-content: center;
 }
 
+/* Image styling */
 .product-image img {
-  max-width: 100%;                     /* Scale image to container width */
+  max-width: 100%;
   height: auto;
-  border-radius: 10px;                 /* Rounded image corners */
+  border-radius: 40px;
   object-fit: cover;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
 }
 
-/* Responsive adjustments for small screens */
+/* Responsive layout on small screens */
 @media (max-width: 768px) {
   .product-container {
-    flex-direction: column;           /* Stack text above image */
+    flex-direction: column;
   }
 
   .product-text {
@@ -143,17 +245,15 @@ main h1 {
   }
 }
 
-
-/* --FOOTER SECTION (Bottom of Page)--*/
-
-/* Entire footer styling */
+/* Footer section */
 footer {
-  background-color: #4b0000; /* Deep maroon for contrast */
+  background-color: #4b0000; /* Deep maroon */
   color: white;
   padding: 50px 30px;
+  box-sizing: border-box;
 }
 
-/* Layout for top part of footer (4 sections) */
+/* Top section of footer layout */
 .footer-top {
   display: flex;
   flex-wrap: wrap;
@@ -162,48 +262,49 @@ footer {
   margin-bottom: 20px;
 }
 
-/* Common styles for each footer section */
+/* Common section size */
 .footer-section {
   flex: 1 1 220px;
   min-width: 220px;
 }
 
-/* Logo in the footer centered */
+/* Center logo in footer */
 .footer-section.about {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Footer logo image */
 .footer-section.about img {
   width: 180px;
   max-width: 100%;
   border-radius: 1px;
-  box-shadow: 0 0 15px rgba(255, 204, 112, 0.3); /* Glow effect */
+  box-shadow: 0 0 15px rgba(255, 204, 112, 0.3);
 }
 
-/* Footer section titles */
+/* Footer section headings */
 .footer-section h4 {
   color: #ffcc70;
   margin-bottom: 15px;
   font-size: 18px;
-  font-weight: 6000;
+  font-weight: 600;
 }
 
-/* Unordered lists like contacts and quick links */
+/* Footer links list */
 .footer-section ul {
   list-style: none;
   padding: 0;
 }
 
-/* Each footer list item (e.g., contact or link) */
+/* Footer individual link item */
 .footer-section ul li {
   margin-bottom: 12px;
   display: flex;
   align-items: center;
 }
 
-/* Icons in footer (e.g., phone, email) */
+/* Footer icons */
 .footer-section img {
   margin-right: 10px;
   width: 30px;
@@ -216,34 +317,9 @@ footer {
   transition: 0.3s;
 }
 
-/* Footer link hover style */
+/* Footer link hover */
 .footer-section a:hover {
   color: #ffcc70;
   text-decoration: underline;
 }
 
-/* Social media icons */
-.social-icons img {
-  width: 30px;
-  margin-right: 10px;
-}
-
-/* Business name below social links */
-.footer-section p {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #ffd700;
-}
-
-/* Bottom copyright section */
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid #800000;
-  padding: 20px;
-  font-size: 15px;
-  color: #e0e0e0;
-}
-
-
-
-   

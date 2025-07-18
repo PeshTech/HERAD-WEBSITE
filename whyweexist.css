@@ -1,0 +1,133 @@
+/* ========== GLOBAL STYLES ========== */
+
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ========== HEADER NAVIGATION ========== */
+header nav {
+    position: fixed;         /* Makes the nav bar stay on top when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;             /* Full width of the screen */
+    z-index: 1000;           /* Places nav above other content */
+    background-color: maroon;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow effect */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 3px solid rgb(31, 19, 19);
+  }
+  
+  /* Logo inside header */
+  .Herad-logo img {
+    width: 250px;
+    height: 90px;
+    object-fit: contain;
+  }
+  
+  /* Navigation links layout */
+  .nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between links */
+  }
+  
+  /* Navigation link styling */
+  .nav-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* On hover over navigation links */
+  .nav-menu ul li a:hover {
+    background-color: #da8082;
+    border-radius: 8px;
+    color: black;
+    padding: 20px 20px;
+  }
+  
+  /* Set up base styles for HTML and Body */
+  html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fffaf9; /* light background */
+    color: #333; /* default text color */
+  }
+  
+  /* ========== SECTION: EXIST CONTAINER ========== */
+  
+  /* Title section container */
+  .Exist-container {
+    background-color: #f5e0e0; /* soft pink background */
+    text-align: center; /* center align text */
+    font-family: 'Megrim', cursive; /* decorative font */
+    font-size: 35px;
+    font-weight: bolder;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Section heading styles */
+  h1 {
+    margin-top: 40px;
+    font-size: 60px;
+    font-weight: 1000; /* use numeric value, not px */
+    color: #800000; /* deep maroon */
+  }
+  
+  /* Padding top in case of fixed header/nav */
+  .main-content {
+    padding-top: 100px;
+  }
+  
+  /* ========== SECTION: FULLSCREEN SLIDER (IMAGE GRID) ========== */
+  
+  /* Container holding all images in a responsive grid */
+  .fullscreen-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    /* auto-fit ensures responsive layout, min 300px per column */
+  
+    justify-items: center;  /* horizontally center each image */
+    align-items: center;    /* vertically align items in cell */
+    
+    gap: 20px;             /* spacing between image cards */
+    padding: 20px;         /* spacing around the entire image section */
+    
+    max-width: 1200px;     /* container max width */
+    margin: 0 auto;        /* center container on the page */
+    
+    box-sizing: border-box;
+  }
+  
+  /* ========== INDIVIDUAL IMAGE STYLES ========== */
+  
+  .fullscreen-slider img {
+    width: 100%;            /* make image fill grid column */
+    max-width: 400px;       /* prevent image from getting too large */
+    height: 350px;          /* fixed height for layout consistency */
+    object-fit: cover;      /* fill container without distortion */
+    padding: 10px;          /* inner spacing around image */
+    border-radius: 16px;    /* round corners */
+    box-shadow: 4px 8px 20px #800000; /* maroon shadow */
+    cursor: pointer;        /* pointer on hover */
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* smooth transitions on hover */
+  }
+  
+  /* HOVER EFFECT: slightly zoom and deepen shadow */
+  .fullscreen-slider img:hover {
+    transform: scale(1.05); /* zoom in slightly */
+    box-shadow: 4px 12px 24px #800000; /* stronger shadow */
+  }
+  
