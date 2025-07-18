@@ -42,7 +42,7 @@ body::before {
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  /* background: rgba(0, 0, 0, 0.4); dark overlay */
   z-index: 0;
 }
 
@@ -135,7 +135,7 @@ main {
 main h1 {
   text-align: center;
   color: white;
-  text-shadow: 6px 4px 16px black;
+  text-shadow: 6px 8px 36px black;
   margin-bottom: 40px;
   font-size: 60px;
   letter-spacing: 1.0px;
