@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>About HERAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link to external CSS -->
   <link rel="stylesheet" href="about.css">
 </head>
 <body>
@@ -15,7 +16,6 @@
       <div class="logo img">
         <img src="images/heradlogo.jpeg" alt="HERAD">
       </div>
-      
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -28,93 +28,179 @@
     </nav>
   </header>
 
-  <!-- About Section -->
-  <section class="section about">
-    <h1>About</h1>
-    <p>HERAD Intercontinental Services Ltd is a proudly Ugandan company transforming lives through sustainable, high-impact business solutions.</p>
-    <p>We bridge the gap between local farmers and international markets to ensure Uganda’s agricultural wealth reaches its full potential.</p>
+  <!-- Hero Section -->
+  <section class="about-hero-auto" aria-label="About HERAD fading hero">
+    <div class="about-hero-auto__track">
+      <div class="slide" style="background-image:url('images/cassavahero.jpg');"></div>
+      <div class="slide" style="background-image:url('images/cassavahero1.jpg');"></div>
+      <div class="slide" style="background-image:url('images/froozencassavanew.jpeg');"></div>
+      <div class="slide" style="background-image:url('images/cassavachips.jpg');"></div>
+    </div>
+    <!-- <div class="about-hero-auto__overlay">
+      <h1>About Herad</h1> -->
+    </div>
   </section>
 
-  <!-- Vision -->
-  <section class="section vision">
-    <h2>Our Vision</h2>
-    <p>To build a prosperous and globally competitive Uganda through empowerment and sustainable growth.</p>
-  </section>
 
-  <!-- Mission -->
-  <section class="section mission">
-    <h2>Our Mission</h2>
-    <p>To deliver high-quality products and services that elevate Uganda's position globally while creating jobs and improving lives.</p>
-  </section>
+  <!-- Section Heading -->
+<h1>About HERAD</h1>
 
-  <!-- Core Values -->
-  <section class="section values">
-    <h2>Our Core Values</h2>
-    <dl>
+  <!-- About / Vision / Mission / Values in 2x2 Grid -->
+  <div class="about-cards">
+    <section class="section about">
+      <h2>About</h2>
+      <p>HERAD Intercontinental Services Ltd is a proudly Ugandan company transforming lives through sustainable, high-impact business solutions.</p>
+      <p>We bridge the gap between local farmers and international markets to ensure Uganda’s agricultural wealth reaches its full potential.</p>
+    </section>
+
+    <section class="section vision">
+      <h2>Our Vision</h2>
+      <p>To build a prosperous and globally competitive Uganda through empowerment and sustainable growth.</p>
+    </section>
+
+    <section class="section mission">
+      <h2>Our Mission</h2>
+      <p>To deliver high-quality products and services that elevate Uganda's position globally while creating jobs and improving lives.</p>
+    </section>
+
+    <section class="section objectives">
+    <h2>Our Objectives</h2>
+    <ul>
+      <ul>Expand into new export markets</ul>
+      <ul>Support more smallholder farmers</li>
+      <ul>Maintain world-class quality standards</li>
+      <ul>Promote sustainable farming methods</ul>
+      <ul>Build strong global partnerships</ul>
+    </ul>
+  </section>
+  </div>
+
+
+
+<!-- Our Core Values (Separate Section) -->
+<div class="core-values">
+  <h2>Our Core Values</h2>
+  <dl>
+    <div class="value-box">
       <dt>Sustainability</dt>
       <dd>We focus on eco-friendly practices and long-term thinking.</dd>
-
+    </div>
+    <div class="value-box">
       <dt>Community Empowerment</dt>
       <dd>We support communities through opportunity creation.</dd>
-
+    </div>
+    <div class="value-box">
       <dt>Excellence</dt>
       <dd>We maintain international standards in all we do.</dd>
-
+    </div>
+    <div class="value-box">
       <dt>Innovation</dt>
       <dd>We use new ideas and tech to create lasting value.</dd>
-
+    </div>
+    <div class="value-box">
       <dt>Integrity</dt>
       <dd>We operate with honesty and transparency.</dd>
-    </dl>
-  </section>
+    </div>
+  </dl>
+</div>
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-top">
-      <!-- Footer logo section -->
-      <div class="footer-section about">
-        <img src="images/heradlogo.jpeg" alt="HERAD ">
-      </div>
 
-      <!-- Contact details -->
-      <div class="footer-section contact">
-        <h4>Contact Us</h4>
-        <ul>
-          <li><img src="images/phone.png" alt="Phone">0772593424, 0778943330, 0777657427</li>
-          <li><img src="images/email.png" alt="Email"><a href="mailto:heradics@gmail.com">heradics@gmail.com</a></li>
-        </ul>
-      </div>
 
-      <!-- Quick page links -->
-      <div class="footer-section links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="impact.html">Impact</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
 
-      <!-- Social media links -->
-      <div class="footer-section social">
-        <h4>Connect With Us</h4>
-        <ul class="social-icons">
-          <li><img src="images/facebook.png" alt="facebook"> Facebook</li>
-          <li><img src="images/instagram.png" alt="Instagram"> Instagram</li>
-          <li><img src="images/linkedin.png" alt="LinkedIn"> LinkedIn</li>
-        </ul>
-        <p><strong>@HERAD Intercontinental Services Ltd</strong></p>
-      </div>
+
+
+  <!-- =============================================================
+     Footer
+============================================================= -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <!-- Footer Logo -->
+    <div class="footer-logo-container">
+      <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo" class="footer-logo" />
     </div>
 
-    <!-- Bottom copyright note -->
-    <div class="footer-bottom">
-      <p>&copy; 2025 HERAD Intercontinental Services Ltd. All rights reserved. | Privacy Policy | Site by HERAD Web Team</p>
+    <!-- Footer Sections Grid -->
+    <div class="footer-sections">
+      <!-- HERAD Offices -->
+      <div class="footer-section">
+        <h3>HERAD Offices</h3>
+        <p>Plot 443, Akright Estate, Wakiso</p>
+        <h4>Other Locations</h4>
+        <p>Kitaturwa LC1, Kasese District</p>
+        <p>Kitwaranyi LC1, Rwakai District</p>
+      </div>
+
+      <!-- HERAD International -->
+      <div class="footer-section">
+        <h3>HERAD International</h3>
+        <p>Africa: East Africa | South Africa</p>
+        <h4>International</h4>
+        <p>USA | UAE | Europe</p>
+      </div>
+
+      <!-- Assistance -->
+      <div class="footer-section">
+        <h3>Assistance</h3>
+        <p class="contact-info"><strong>Contacts:</strong><br>
+          <a href="tel:+256772593424">+256 772 593424</a><br>
+          <a href="tel:+256778943330">+256 778 943330</a><br>
+          <a href="tel:+256753044293">+256 753 044293</a><br>
+          <a href="tel:+256702593424">+256 702 593424</a>
+        </p>
+        <p class="contact-info email-links"><strong>Emails:</strong><br>
+          <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br>
+          <a href="mailto:ndinaiwehenry@gmail.com">ndinaiwehenry@gmail.com</a>
+        </p>
+      </div>
+
+     <!-- Follow & Payments -->
+        <div class="footer-section footer-follow">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@heradcompany" target="_blank" rel="noopener noreferrer">
+              <img src="images/tiktok.png" alt="HERAD on TikTok" />
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/HERADExports" target="_blank" rel="noopener noreferrer">
+              <img src="images/facebook.png" alt="HERAD on Facebook" />
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/herad_exports" target="_blank" rel="noopener noreferrer">
+              <img src="images/instagram1.png" alt="HERAD on Instagram" />
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/256772593424" target="_blank" rel="noopener noreferrer">
+              <img src="images/whatsap.png" alt="Chat with HERAD on WhatsApp" />
+            </a>
+          </div>
+
+           <h4>Payment Methods</h4>
+          <div class="payment-methods-icons">
+            <!-- Airtel -->
+            <img src="images/airtel.png" alt="Pay with Airtel Money" class="airtel-logo" />
+            <!-- MTN -->
+            <img src="images/mtnicon.jpeg" alt="Pay with MTN Mobile Money" />
+            <!-- MasterCard -->
+            <img src="images/mastercard1.jpeg" alt="Pay with MasterCard" />
+            <!-- Other Payment -->
+            <img src="images/visa.png" alt="Visa card" />
+            <!-- Cash -->
+            <img src="images/handcash1.png" alt="Cash Accepted" />
+          </div>
+      </div>
+    </div><!-- /.footer-sections -->
+  </div><!-- /.footer-content -->
+
+  <!-- Footer Bottom Strip -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 HERAD ICS. All rights reserved.</p>
+    <div class="footer-legal-links">
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
 </body>
 </html>

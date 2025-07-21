@@ -1,3 +1,18 @@
+<!-- =============================================================
+     HERAD INTERCONTINENTAL SERVICES LTD - Corrected Homepage
+     ---------------------------------------------------------
+     Notes:
+       • File names in links are lowercased (index.html, about.html, etc.) for consistency.
+         If your actual files use different casing, adjust the href values.
+       • Image paths use the local "images/" folder. Update if yours differ.
+       • All footer structure + classes now align with the CSS below.
+       • Accessibility: improved alt text, tel: links, aria-current on active page.
+       • Responsive improvements: product grid wraps, footer grid collapses.
+       • Hero overlay fixed (semi‑transparent) so background is visible.
+
+     Save this as: index.html
+     Make sure style.css from below sits in same directory (or adjust path).
+=============================================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,27 +23,31 @@
   <meta name="description" content="HERAD INTERCONTINENTAL SERVICES LTD" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Google Font: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Linking to my external CSS stylesheet -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
-
 <body>
-   <!-- Navigation Bar  -->
-  <header>
-    <nav>
+  <!-- =============================================================
+       Navigation Bar
+  ============================================================= -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
       <!-- Left side logo -->
-      <div class="logo img">
-        <img src="images/heradlogo.jpeg" alt="HERAD">
+      <div class="logo">
+        <a href="index.html" aria-label="HERAD home">
+          <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo" />
+        </a>
       </div>
 
       <!-- Right side navigation links -->
-      <div class="nav">
+      <div class="nav-links">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="About.html">About Us</a></li>
-          <li><a href="Products.html">Products</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
           <li><a href="impact.html">Impact</a></li>
           <li><a href="whyweexist.html">Why We Exist</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -38,110 +57,151 @@
     </nav>
   </header>
 
-  <!--  Main Section with Background Image  -->
-  <main class="content">
+  <!-- =============================================================
+       Hero Section
+  ============================================================= -->
+  <main class="content hero-home">
     <section class="intro">
       <h1>Exporting Quality Ugandan Cassava to the World</h1>
-      <!-- <p>Empowering farmers, creating jobs, and connecting Uganda to global markets through sustainable cassava exports.</p> -->
+      <!-- Optional tagline: uncomment if you want supporting text.
+      <p>Empowering farmers, creating jobs, and connecting Uganda to global markets through sustainable cassava exports.</p>
+      -->
       <a class="btn" href="products.html">Explore Our Products</a>
     </section>
   </main>
 
-
-  <!--  Products Section -->
-  <section class="home-products">
-    <h2>Our Cassava Products</h2>
+  <!-- =============================================================
+       Home Products Section
+  ============================================================= -->
+  <section class="home-products" aria-labelledby="home-products-heading">
+    <h2 id="home-products-heading">Our Cassava Products</h2>
     <div class="product-grid">
 
       <!-- Product 1 -->
-      <div class="product-card">
-        <img src="images/freshcassava.jpg" alt="Cassava Roots">
+      <article class="product-card">
+        <img src="images/freshcassava.jpg" alt="Fresh cassava roots" />
         <h3>Fresh Cassava Roots</h3>
-      </div>
+      </article>
 
       <!-- Product 2 -->
-      <div class="product-card">
-        <img src="images/froozencassavanew.jpeg" alt="Premium Frozen Cassava">
+      <article class="product-card">
+        <img src="images/froozencassavanew.jpeg" alt="Premium frozen cassava" />
         <h3>Premium Frozen Cassava</h3>
-      </div>
+      </article>
 
       <!-- Product 3 -->
-      <div class="product-card">
-        <img src="images/cassavachips.jpg" alt="Dried Cassava Chips">
+      <article class="product-card">
+        <img src="images/cassavachips.jpg" alt="Dried cassava chips" />
         <h3>Dried Cassava Chips</h3>
-      </div>
+      </article>
 
       <!-- Product 4 -->
-      <div class="product-card">
-        <img src="images/cassavaflour.jpg" alt="Pure Organic Cassava Flour">
+      <article class="product-card">
+        <img src="images/cassavaflour.jpg" alt="Pure organic cassava flour" />
         <h3>Pure Organic Cassava Flour</h3>
-      </div>
+      </article>
 
-      <!-- Product 4 -->
-      <div class="product-card">
-        <img src="images/cassavafeeds.jpg" alt="Cassava Feeds">
+      <!-- Product 5 -->
+      <article class="product-card">
+        <img src="images/cassavafeeds.jpg" alt="Cassava-based animal feeds" />
         <h3>Cassava Feeds</h3>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-top">
-      <!-- Footer logo section -->
-      <div class="footer-section about">
-        <img src="images/heradlogo.jpeg" alt="HERAD Logo">
+
+
+
+  <!-- =============================================================
+       Footer
+  ============================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <!-- Footer Logo -->
+      <div class="footer-logo-container">
+        <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo" class="footer-logo" />
       </div>
 
-      <!-- Contact details -->
-      <div class="footer-section contact">
-        <h4>Contact Us</h4>
-        <ul>
-          <li><img src="images/phone.png" alt="Phone">0772593424, 0778943330, 0777657427</li>
-          <li><img src="images/email.png" alt="Email"><a href="mailto:heradics@gmail.com">heradics@gmail.com</a></li>
-        </ul>
-      </div>
+      <!-- Footer Sections Grid -->
+      <div class="footer-sections">
+        <!-- HERAD Offices -->
+        <div class="footer-section">
+          <h3>HERAD Offices</h3>
+          <p>Plot 443, Akright Estate, Wakiso</p>
+          <h4>Other Locations</h4>
+          <p>Kitaturwa LC1, Kasese District</p>
+          <p>Kitwaranyi LC1, Rwakai District</p>
+        </div>
 
-      <!-- Quick page links -->
-      <div class="footer-section links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="impact.html">Impact</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+        <!-- HERAD International -->
+        <div class="footer-section">
+          <h3>HERAD International</h3>
+          <p>Africa: East Africa | South Africa</p>
+          <h4>International</h4>
+          <p>USA | UAE | Europe</p>
+        </div>
 
-      <!-- ================================
-             Social Media Icons
-        ================================ -->
-        <div class="social-media">
+        <!-- Assistance -->
+        <div class="footer-section">
+          <h3>Assistance</h3>
+          <p class="contact-info"><strong>Contacts:</strong><br>
+            <a href="tel:+256772593424">+256 772 593424</a><br>
+            <a href="tel:+256778943330">+256 778 943330</a><br>
+            <a href="tel:+256753044293">+256 753 044293</a><br>
+            <a href="tel:+256702593424">+256 702 593424</a>
+          </p>
+          <p class="contact-info email-links"><strong>Emails:</strong><br>
+            <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br>
+            <a href="mailto:ndinaiwehenry@gmail.com">ndinaiwehenry@gmail.com</a>
+          </p>
+        </div>
+
+        <!-- Follow & Payments -->
+        <div class="footer-section footer-follow">
           <h3>Follow Us</h3>
           <div class="social-icons">
             <!-- TikTok -->
             <a href="https://www.tiktok.com/@heradcompany" target="_blank" rel="noopener noreferrer">
-              <img src="/herad_images/herad-tiktok icon.png" alt="TikTok" />
+              <img src="images/tiktok.png" alt="HERAD on TikTok" />
             </a>
             <!-- Facebook -->
             <a href="https://www.facebook.com/HERADExports" target="_blank" rel="noopener noreferrer">
-              <img src="/herad_images/Herad-Facebook icon.png" alt="Facebook" />
+              <img src="images/facebook.png" alt="HERAD on Facebook" />
             </a>
             <!-- Instagram -->
             <a href="https://www.instagram.com/herad_exports" target="_blank" rel="noopener noreferrer">
-              <img src="/herad_images/Herad-Instagram icon.png" alt="Instagram" />
+              <img src="images/instagram1.png" alt="HERAD on Instagram" />
             </a>
             <!-- WhatsApp -->
             <a href="https://wa.me/256772593424" target="_blank" rel="noopener noreferrer">
-              <img src="/herad_images/Herad-whatsapp icon.png" alt="WhatsApp" />
+              <img src="images/whatsap.png" alt="Chat with HERAD on WhatsApp" />
             </a>
           </div>
 
-    <!-- Bottom copyright note -->
+          <h4>Payment Methods</h4>
+          <div class="payment-methods-icons">
+            <!-- Airtel -->
+            <img src="images/airtel.png" alt="Pay with Airtel Money" class="airtel-logo" />
+            <!-- MTN -->
+            <img src="images/mtnicon.jpeg" alt="Pay with MTN Mobile Money" />
+            <!-- MasterCard -->
+            <img src="images/mastercard1.jpeg" alt="Pay with MasterCard" />
+            <!-- Other Payment -->
+            <img src="images/visa.png" alt="Visa card" />
+            <!-- Cash -->
+            <img src="images/handcash1.png" alt="Cash Accepted" />
+          </div>
+        </div>
+      </div><!-- /.footer-sections -->
+    </div><!-- /.footer-content -->
+
+    <!-- Footer Bottom Strip -->
     <div class="footer-bottom">
-      <p>&copy; 2025 HERAD Intercontinental Services Ltd. All rights reserved. | Privacy Policy | Site by HERAD Web Team</p>
+      <p>&copy; 2025 HERAD ICS. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+      </div>
     </div>
   </footer>
 </body>

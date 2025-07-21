@@ -1,276 +1,379 @@
-/* Remove browser's default spacing and make elements easier to size */
+/* ==================================================================
+   CSS FOR HERAD HOMEPAGE (style.css)
+   ------------------------------------------------------------------
+   Copy everything below this line into your style.css file.
+   DO NOT leave CSS below your HTML in production.
+================================================================== */
+
+/* ------------------------------
+   CSS RESET / BASE
+-------------------------------- */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Includes padding & border inside width/height */
+  box-sizing: border-box;
 }
 
-/* Set default font, background color, text color, and line spacing for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: white; /* Clean white background */
-  line-height: 1.6; /* Improves text readability */
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  line-height: 1.6;
+  color: #1d1d1d;
 }
 
-
-/* NAVIGATION BAR */
-
-/* Style the logo image inside the navbar */
-.logo img {
-  max-width: 200px; /* Prevents logo from getting too big */
-  height: auto;     /* Maintains natural aspect ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Navigation container styles */
-nav {
-  background-color: #C77D83; /* Brand color for navbar background */
-  padding: 15px 20px;       /* Adds breathing space inside navbar */
-  display: flex;            /* Align logo and links side-by-side */
-  justify-content: space-between; /* Logo goes left, links go right */
-  align-items: center;      
-  flex-wrap: wrap;          /* Allows nav items to stack on small screens */
+/* Color Variables (adjust to theme) */
+:root {
+  --brand-maroon: #800000; /* core maroon */
+  --brand-maroon-dark: #2e0303;
+  --brand-maroon-mid: #692727; /* footer bg */
+  --brand-black: #000000;
+  --brand-white: #ffffff;
+  --bg-soft: #fff8f0; /* light beige section bg */
+  --text-light: #cccccc;
+  --text-muted: #999999;
+  --footer-border: #444444;
 }
 
-/* Style the navigation links container */
-nav ul {
-  display: flex;        /* Arrange links horizontally */
-  gap: 20px;            /* Space between links */
-  list-style: none;     /* Remove bullet points from list */
-  font-size: 20px;
+/* Utility */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-/* Style for each individual nav link */
-nav a {
-  color: white;                 /* White text for contrast on maroon background */
-  text-decoration: none;       /* Remove underlines */
-  padding: 8px 12px;           /* Space around each link */
-  transition: background 0.3s; /* Smooth effect when hovering */
+/* ------------------------------
+   SITE HEADER + NAV
+-------------------------------- */
+.site-header {
+  width: 100%;
 }
 
-/* Visual feedback when hovering over nav links */
-nav a:hover {
-  background-color:white; /* Background becomes white */
-  color: maroon;           /* Text becomes maroon for contrast */
-  border-radius: 4px;      /* Rounded corners on hover */
+.site-nav {
+  background-color: var(--brand-maroon);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
+.site-nav .logo img {
+  max-width: 200px;
+}
 
-/*  HERO SECTION */
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  font-size: 1.25rem; /* ~20px */
+}
 
-/* Large background image section with intro text */
-main.content {
+.nav-links a {
+  color: var(--brand-white);
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  background-color: var(--brand-white);
+  color: var(--brand-maroon);
+}
+
+/* ------------------------------
+   HERO SECTION
+-------------------------------- */
+.hero-home {
   position: relative;
-  background-image: url('images/indexbg.jpg'); /* Hero background image */
-  background-size: cover;     /* Cover entire container */
-  background-position: center;/* Keep image centered */
-  padding: 120px 20px;        /* Space inside the hero section */
-  color: white;
-  min-height: 550px;          /* Set minimum height of image */
+  background-image: url('images/indexbg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  color: var(--brand-white);
+  min-height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  isolation: isolate; /* ensures pseudo stacking works */
 }
 
-/* Add a dark overlay on top of the background image for better text visibility */
-main.content::before {
+.hero-home::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color:  black; /* Semi-transparent black */
-  z-index: -1; /* Push behind the text */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* semi‑transparent overlay */
+  z-index: -1; /* behind content, above background */
 }
 
-/* Container for hero text */
 .intro {
   max-width: 800px;
-  color: white;
-  text-shadow: 4px 4px 16px black; /* Shadow makes text readable */
+  text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.9);
 }
 
-/* Main headline */
 .intro h1 {
-  font-size: 42px;
-  font-weight: bold;
-  color: white; /* Bright yellow for emphasis */
+  font-size: clamp(2rem, 5vw, 2.625rem); /* scales between ~32px and 42px */
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
-/* Supporting paragraph text */
-/* .intro p {
-  font-size: 20px;
+.intro p {
+  font-size: 1.25rem;
   line-height: 1.8;
   margin-bottom: 30px;
-  color: black;
-} */
+}
 
-/* Button that links to products */
 .btn {
   display: inline-block;
   padding: 14px 28px;
-  background-color: maroon; /* Bright yellow button */
-  color: white;
+  background-color: var(--brand-maroon);
+  color: var(--brand-white);
   border-radius: 6px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   margin-top: 50px;
+  border: 1px solid transparent;
 }
 
-/* Button hover effect */
 .btn:hover {
-  background-color: rgb(46, 3, 3);
-  color: white;
-  border: 1px solid white;
+  background-color: var(--brand-maroon-dark);
+  border-color: var(--brand-white);
 }
 
-
-/*PRODUCTS SECTION (Home Products) */
-
-/* Outer section for the product showcase */
+/* ------------------------------
+   HOME PRODUCTS SECTION
+-------------------------------- */
 .home-products {
   padding: 60px 20px;
-  background-color: #fff8f0; /* Soft beige background */
+  background-color: var(--bg-soft);
   text-align: center;
 }
 
-/* Section heading */
 .home-products h2 {
-  font-size: 32px;
+  font-size: clamp(2rem, 5vw, 2rem);
   margin-bottom: 40px;
-  color: maroon;
+  color: var(--brand-maroon);
 }
 
-/* Container that holds all product cards */
 .product-grid {
- display: flex;
+  display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: nowrap; /* Make it responsive */
+  flex-wrap: wrap; /* responsive wrap */
 }
 
-/* Individual product card box */
 .product-card {
-  background-color: white;
+  background-color: var(--brand-white);
   border-radius: 10px;
   padding: 20px;
   max-width: 280px;
-  box-shadow: 0 4px 8px black; /* Subtle shadow */
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  flex: 1 1 220px; /* grow/shrink with min width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
+  transition: transform 0.3s ease;
 }
 
-/* Slight lift when hovering over a card */
 .product-card:hover {
-  transform: translatey(-5px);
+  transform: translateY(-5px);
 }
 
-/* Product image inside each card */
 .product-card img {
   width: 100%;
   height: 180px;
-  object-fit: cover; /* Keeps image ratio and fills area */
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
 }
 
-/* Product title */
 .product-card h3 {
-  font-size: 18px;
-  color: maroon;
+  font-size: 1.125rem; /* 18px */
+  color: var(--brand-maroon);
 }
 
 
-/* --FOOTER SECTION (Bottom of Page)--*/
 
-/* Entire footer styling */
-footer {
-  background-color: #4b0000; /* Deep maroon for contrast */
-  color: white;
-  padding: 50px 30px;
+
+/* ------------------------------
+   FOOTER
+-------------------------------- */
+/* Define CSS Variables */
+:root {
+  --brand-white: #ffffff;
+  --text-light: #f0f0f0;
+  --footer-border: #dcdcdc;
+  --text-muted: #bfbfbf;
 }
 
-/* Layout for top part of footer (4 sections) */
-.footer-top {
+/* FOOTER STYLES */
+.footer {
+  background-color: maroon;
+  color: var(--brand-white);
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: var(--brand-white);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.footer-section p {
+  margin: 0 0 8px 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.contact-info a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  color: var(--brand-white);
+}
+
+.footer-follow .social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
-/* Common styles for each footer section */
-.footer-section {
-  flex: 1 1 220px;
-  min-width: 220px;
-}
-
-/* Logo in the footer centered */
-.footer-section.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-section.about img {
-  width: 180px;
-  max-width: 100%;
-  border-radius: 1px;
-  box-shadow: 0 0 15px rgba(255, 204, 112, 0.3); /* Glow effect */
-}
-
-/* Footer section titles */
-.footer-section h4 {
-  color: #ffcc70;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: 6000;
-}
-
-/* Unordered lists like contacts and quick links */
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-/* Each footer list item (e.g., contact or link) */
-.footer-section ul li {
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-}
-
-/* Icons in footer (e.g., phone, email) */
-.footer-section img {
-  margin-right: 10px;
+.footer-follow .social-icons a img {
+  height: 30px;
   width: 30px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: rgb(240, 38, 38);
+  padding: 5px;
+  transition: background-color 0.3s;
+  display: flex;
 }
 
-/* Footer links */
-.footer-section a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
+.footer-follow .social-icons a img:hover {
+  background-color: black;
 }
 
-/* Footer link hover style */
-.footer-section a:hover {
-  color: #ffcc70;
-  text-decoration: underline;
+.footer-follow .payment-methods-icons {
+  display: flex;
+  gap: 10px;
+  /* overflow-x: auto; */
+  /* padding-bottom: 5px; */
 }
 
+.footer-follow .payment-methods-icons img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color:  rgb(240, 38, 38);
+  /* padding: 5px; */
+  opacity: 0.85;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
 
-/* Bottom copyright section */
+.footer-follow .payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: black ;
+}
+
 .footer-bottom {
-  text-align: center;
-  border-top: 1px solid #800000;
-  padding-top: 20px;
-  font-size: 15px;
-  color: #e0e0e0;
+  border-top: 2px solid var(--footer-border);
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+.footer-bottom a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 20px;
+}
 
+.footer-bottom a:hover {
+  color: var(--brand-white);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-sections {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
