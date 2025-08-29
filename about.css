@@ -63,7 +63,7 @@ nav {
   display: flex;
   list-style: none;
   gap: 10px;
-  
+  font-size: 1.25rem;
   padding: 10px;
 }
 
