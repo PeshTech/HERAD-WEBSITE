@@ -1,9 +1,3 @@
-/* ==================================================================
-   CSS FOR HERAD HOMEPAGE (style.css)
-   ------------------------------------------------------------------
-   Copy everything below this line into your style.css file.
-   DO NOT leave CSS below your HTML in production.
-================================================================== */
 
 /* ------------------------------
    CSS RESET / BASE
@@ -81,7 +75,7 @@ img {
   list-style: none;
   display: flex;
   gap: 20px;
-  font-size: 1.25rem; /* ~20px */
+  font-size: 1.25rem; 
 }
 
 .nav-links a {
@@ -231,6 +225,7 @@ img {
   padding: 40px 0 20px;
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  width: 100%;
 }
 
 .footer-content {
