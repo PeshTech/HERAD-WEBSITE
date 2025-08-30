@@ -1,133 +1,279 @@
-/* ========== GLOBAL STYLES ========== */
-
-/* Reset margin and padding for all elements */
+/* ================= RESET ================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fabfc063;
+}
 
-  /* ========== HEADER NAVIGATION ========== */
+/* ================= NAV ================= */
 header nav {
-    position: fixed;         /* Makes the nav bar stay on top when scrolling */
-    top: 0;
-    left: 0;
-    width: 100%;             /* Full width of the screen */
-    z-index: 1000;           /* Places nav above other content */
-    background-color: maroon;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow effect */
-    display: flex;
-    justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: maroon;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+.nav-menu {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.nav-menu ul li a:hover {
+  background-color: white;
+  color: maroon;
+  border-radius: 6px;
+}
+
+/* ================= HERO ================= */
+.main-content {
+  padding-top: 100px; /* for fixed nav */
+}
+
+.Exist-container {
+  text-align: center;
+  background-color: #f5e0e0;
+  font-family: 'Megrim', cursive;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.Exist-container h1 {
+  font-size: 60px;
+  color: #800000;
+  margin-bottom: 40px;
+}
+
+.fullscreen-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  justify-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.fullscreen-slider img {
+  width: 100%;
+  max-width: 400px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 4px 8px 20px #800000;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.fullscreen-slider img:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 12px 24px #800000;
+}
+
+/* ------------------------------
+   FOOTER
+-------------------------------- */
+/* Define CSS Variables */
+:root {
+  --brand-white: #ffffff;
+  --text-light: #f0f0f0;
+  --footer-border: #dcdcdc;
+  --text-muted: #bfbfbf;
+}
+
+/* FOOTER STYLES */
+.footer {
+  background-color: maroon;
+  color: var(--brand-white);
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: var(--brand-white);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.footer-section p {
+  margin: 0 0 8px 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.contact-info a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  color: var(--brand-white);
+}
+
+.footer-follow .social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-follow .social-icons a img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: rgb(240, 38, 38);
+  padding: 5px;
+  transition: background-color 0.3s;
+  display: flex;
+}
+
+.footer-follow .social-icons a img:hover {
+  background-color: black;
+}
+
+.footer-follow .payment-methods-icons {
+  display: flex;
+  gap: 10px;
+  /* overflow-x: auto; */
+  /* padding-bottom: 5px; */
+}
+
+.footer-follow .payment-methods-icons img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color:  rgb(240, 38, 38);
+  /* padding: 5px; */
+  opacity: 0.85;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-follow .payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: black ;
+}
+
+.footer-bottom {
+  border-top: 2px solid var(--footer-border);
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+  color: var(--brand-white);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
-    border-bottom: 3px solid rgb(31, 19, 19);
+    text-align: center;
   }
-  
-  /* Logo inside header */
-  .Herad-logo img {
-    width: 250px;
-    height: 90px;
-    object-fit: contain;
+  .footer-sections {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
-  
-  /* Navigation links layout */
-  .nav-menu ul {
-    list-style: none;
-    display: flex;
-    gap: 20px; /* Space between links */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  /* Navigation link styling */
-  .nav-menu ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;
-    padding: 8px 12px;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* On hover over navigation links */
-  .nav-menu ul li a:hover {
-    background-color: #da8082;
-    border-radius: 8px;
-    color: black;
-    padding: 20px 20px;
-  }
-  
-  /* Set up base styles for HTML and Body */
-  html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background-color: #fffaf9; /* light background */
-    color: #333; /* default text color */
-  }
-  
-  /* ========== SECTION: EXIST CONTAINER ========== */
-  
-  /* Title section container */
-  .Exist-container {
-    background-color: #f5e0e0; /* soft pink background */
-    text-align: center; /* center align text */
-    font-family: 'Megrim', cursive; /* decorative font */
-    font-size: 35px;
-    font-weight: bolder;
-    padding: 20px;
-    margin-bottom: 30px;
-  }
-  
-  /* Section heading styles */
-  h1 {
-    margin-top: 40px;
-    font-size: 60px;
-    font-weight: 1000; /* use numeric value, not px */
-    color: #800000; /* deep maroon */
-  }
-  
-  /* Padding top in case of fixed header/nav */
-  .main-content {
-    padding-top: 100px;
-  }
-  
-  /* ========== SECTION: FULLSCREEN SLIDER (IMAGE GRID) ========== */
-  
-  /* Container holding all images in a responsive grid */
-  .fullscreen-slider {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    /* auto-fit ensures responsive layout, min 300px per column */
-  
-    justify-items: center;  /* horizontally center each image */
-    align-items: center;    /* vertically align items in cell */
-    
-    gap: 20px;             /* spacing between image cards */
-    padding: 20px;         /* spacing around the entire image section */
-    
-    max-width: 1200px;     /* container max width */
-    margin: 0 auto;        /* center container on the page */
-    
-    box-sizing: border-box;
-  }
-  
-  /* ========== INDIVIDUAL IMAGE STYLES ========== */
-  
-  .fullscreen-slider img {
-    width: 100%;            /* make image fill grid column */
-    max-width: 400px;       /* prevent image from getting too large */
-    height: 350px;          /* fixed height for layout consistency */
-    object-fit: cover;      /* fill container without distortion */
-    padding: 10px;          /* inner spacing around image */
-    border-radius: 16px;    /* round corners */
-    box-shadow: 4px 8px 20px #800000; /* maroon shadow */
-    cursor: pointer;        /* pointer on hover */
-    
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* smooth transitions on hover */
-  }
-  
-  /* HOVER EFFECT: slightly zoom and deepen shadow */
-  .fullscreen-slider img:hover {
-    transform: scale(1.05); /* zoom in slightly */
-    box-shadow: 4px 12px 24px #800000; /* stronger shadow */
-  }
-  
+}
+
+
+/* Responsive */
+@media (max-width: 900px){
+  .footer-sections { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 600px){
+  .nav-menu ul { flex-direction: column; gap: 10px; }
+  .footer-sections { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}

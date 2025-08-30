@@ -70,6 +70,11 @@ nav {
   align-items: center;
 }
 
+.logo img {
+  max-width: 200px;
+  height: auto;
+}
+
 .menu li a {
   font-size: larger;
   color: white;
