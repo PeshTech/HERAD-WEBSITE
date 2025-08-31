@@ -16,12 +16,13 @@ header nav {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: maroon;
+  /* background-color: maroon; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.3); */
+  
 }
 
 .logo img {
@@ -58,20 +59,38 @@ header nav {
 
 /* ================= CONTACT SECTION ================= */
 .contact-section {
+  position: relative; /* Needed for overlay */
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
+  padding: 8rem 1rem 3rem;
+
+  /* Background image */
+  background-image: url("images/b.jpg"); /* <-- change path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay effect */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent black overlay */
+  z-index: 1; /* keeps it behind the form */
 }
 
 .contact-container {
+  position: relative; /* makes sure the form stays above the overlay */
   width: 100%;
   max-width: 600px;
+  z-index: 2;
 }
 
 .contact-form {
-  background: #fdf0f0;
+  background: white;
   padding: 2.5rem;
   border-radius: 15px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.1);
