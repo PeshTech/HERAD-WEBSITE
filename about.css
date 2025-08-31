@@ -1,4 +1,6 @@
-/* Reset and base styles */
+/* =========================================
+   RESET & BASE STYLES
+========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,318 +8,232 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: white;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: 900;
+  background-color: #fff;
   color: #333;
   line-height: 1.6;
 }
 
-/* Header styles */
+a { text-decoration: none; color: inherit; }
+
+/* =========================================
+   HEADER NAVIGATION - RESPONSIVE
+========================================= */
 header {
-  background-color: maroon;
-  color: white;
+  background-color: #800000;
   padding: 1em 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-
-h1 {
-  font-size: 50px;
-  font-family: Montserrat;
-  text-align: center;
-  font-weight: bold;
-  color: #800000;
-  padding: 20px 0; /* Equal top and bottom padding */
-  margin-bottom: 15px;
-  margin-top: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-}
-
-h1::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: #800000;
-  margin: 8px auto 0;
-  border-radius: 2px;
-}
-
 
 nav {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding-left: 5px;
+  padding: 0 20px;
 }
 
+/* Logo */
 .logo img {
-  max-width: 200px;
+  max-width: 180px;
   height: auto;
 }
 
+/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
-  list-style: none;
-  gap: 5px;
-  font-size: 1.25rem;
-  padding: 7px;
+  gap: 12px;
+  font-size: 25px;
+  font-weight: 900;
 }
 
 .nav-links a {
-  text-decoration: none;
+  padding: 8px 14px;
   color: white;
-    padding: 8px 12px;
+  font-weight: 500;
+  border-radius: 5px;
   transition: 0.3s;
-  border-radius: 4px;
 }
 
 .nav-links a:hover {
   background-color: white;
-  color: maroon;
-  border-radius: 5px;
+  color: #800000;
 }
 
-/* Hero Section */
+/* Hamburger Menu Icon */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 1024px) {
+  nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile */
+@media(max-width:768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #800000;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .nav-links li:first-child { border-top: none; }
+}
+
+/* =========================================
+   HERO SECTION WITH FADE BACKGROUND
+========================================= */
 .about-hero-auto {
   position: relative;
   width: 100%;
-  height: 60vh;
-  max-height: 800x;
+  min-height: 700px;
   overflow: hidden;
 }
 
-.about-hero-auto__track {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.about-hero-auto .slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  animation: fadeAnimation 16s infinite;
-}
-
-
-
-.about-hero-auto .slide:nth-child(1) {
-  animation-delay: 0s;
-}
-.about-hero-auto .slide:nth-child(2) {
-  animation-delay: 4s;
-}
-.about-hero-auto .slide:nth-child(3) {
-  animation-delay: 8s;
-}
-.about-hero-auto .slide:nth-child(4) {
-  animation-delay: 12s;
-}
-
-@keyframes fadeAnimation {
-  0%   { opacity: 0; }
-  10%  { opacity: 1; }
-  25%  { opacity: 1; }
-  35%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-.about-hero-auto__overlay {
+.hero-slides {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* Overlay for cards and heading */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  z-index: 1;
+  padding: 60px 20px 20px 20px;
 }
 
-.about-hero-auto__overlay h1 {
-  color: #fff;
-  font-size: 3rem;
+/* =========================================
+   SECTION H1 HEADING
+========================================= */
+.section-h1 {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-h1 h1 {
+  font-size: 2.8rem;
+  color: white;
   font-weight: bold;
-  letter-spacing: 2px;
-  margin: 0;
-  text-transform: capitalize;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: rgba(145, 5, 5, 0.7);
+  display: inline-block;
+  padding: 20px 35px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 4px rgba(17, 1, 1, 0.9);
 }
 
-@media (max-width: 768px) {
-  .about-hero-auto {
-    height: 65vh;
-  }
-  .about-hero-auto__overlay h1 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-hero-auto {
-    height: 55vh;
-  }
-  .about-hero-auto__overlay h1 {
-    font-size: 1.5rem;
-  }
-}
-
-/* Grid for About, Vision, Mission, Values */
+/* =========================================
+   CARDS OVER HERO
+========================================= */
 .about-cards {
-  max-width: 2000px;
-  margin: 3em auto;
   display: grid;
-  gap: 2em;
   grid-template-columns: repeat(4, 1fr);
-  padding: 0 1em;
-}
-
-@media (max-width: 768px) {
-  .about-cards {
-    grid-template-columns: 1fr;
-  }
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
 }
 
 .section {
-  padding: 2em 1.5em;
+  padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  border: 2px solid currentColor;
-
-  color: maroon; /* Text color (adjust for readability) */
-}
-
-.about {
-  background-color: maroon;
-  color: #FFFDD0;
-  border-color: #FFFDD0;
-}
-
-.vision {
-  background-color: #FFFDD0;
-  color: maroon;
-  border-color: maroon;
-}
-
-.mission {
-  background-color: maroon;
-  color: #FFFDD0;
-  border-color: #FFFDD0;
-}
-
-.objectives {
-  background-color: #FFFDD0;
-  color: maroon;
-  border-color: maroon;
+  background-color: rgba(255,255,255,0.8);
+  border-right: 6px solid #800000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
 .section h2 {
-  margin-bottom: 0.5em;
-  text-align: left;
+  font-size: 1.75rem;
+  color: #800000;
+  margin-bottom: 15px;
 }
 
-
-
-dl dt {
-  font-weight: bold;
-  margin-top: 1em;
+.section ul li {
+  margin-bottom: 8px;
+  list-style-type: disc;
+  padding-left: 10px;
 }
 
-p, dd {
-  text-align: left;
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 1200px) { .about-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .about-cards { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .hero-overlay h1 { font-size: 1.8rem; padding: 15px 20px; }
+  .about-hero-auto { min-height: 500px; }
 }
 
-.about-cards {
-  max-width: 2000px;
-  margin: 3em auto;
-  padding: 40px 20px;                /* match Core Values spacing */
-  display: grid;
-  gap: 2em;
-  grid-template-columns: repeat(4, 1fr);
-  background: linear-gradient(to right, #ffffff 0%, #0f0707 50%, #ffffff 100%);
-  border-radius: 12px;               /* match look */
+/* =========================================
+   HERO SLIDE SCRIPT (CSS ONLY ANIMATION)
+========================================= */
+@keyframes fadeinout {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
-
-
-/* Core Values Section */
-.core-values {
-  margin: 40px 0;
-  padding: 40px 20px;
- background: linear-gradient(to right, #ffffff 0%, #0f0707 50%, #ffffff 100%);
-
-  border-radius: 12px;
-  overflow-x: auto; /* Enable horizontal scroll if too many boxes */
-}
-
-/* Section Heading */
-.core-values h2 {
-  text-align: center;
-  font-size: 35px;
-  font-family: Montserrat;
-  color: #ffffff; /* Maroon */
-  margin-bottom: 25px;
-}
-
-/* Flex layout for boxes */
-.core-values dl {
-  display: flex;
-  gap: 20px;
-  justify-content: flex-start;
-  align-items: stretch;
-  max-width: 100%;
-}
-
-/* Each box */
-.value-box {
-  display: flex;
-  flex-direction: column;
-  width: 250px; /* Fixed width for consistency */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* border: 2px solid #0c0707; Maroon border */
-}
-
-/* Hover effect */
-.value-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* Title inside the box */
-.value-box dt {
-  background: #800000; /* Maroon */
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  padding: 12px;
-}
-
-/* Description inside the box */
-.value-box dd {
-  margin: 0;
-  padding: 15px;
-  font-size: 16px;
-  color: #333;
-  line-height: 1.5;
-}
-
-
-
-
-
-
-
-
+/* Apply animation to all slides with delays via JS (or CSS nth-child if static) */
 
 
 /* ------------------------------
@@ -333,11 +249,12 @@ p, dd {
 
 /* FOOTER STYLES */
 .footer {
-  background-color: #800000;
+  background-color: maroon;
   color: var(--brand-white);
   padding: 40px 0 20px;
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  width: 100%;
 }
 
 .footer-content {
@@ -483,4 +400,14 @@ p, dd {
     flex-direction: column;
     text-align: center;
   }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 1200px) { .about-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .about-cards { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .hero-section { min-height: 500px; }
+  .hero-overlay h1 { font-size: 1.8rem; }
 }

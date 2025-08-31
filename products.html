@@ -14,11 +14,19 @@
   <header>
     <nav>
       <div class="logo">
-        <a href="index.html" aria-label="HERAD home">
-          <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo" />
+        <a href="index.html">
+          <img src="images/heradlogo.jpeg" alt="HERAD logo" />
         </a>
       </div>
-      <ul class="menu">
+  
+      <!-- Hamburger -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="products.html">Products</a></li>
@@ -261,5 +269,16 @@
       </div>
     </div>
   </footer>
+
+<script>
+  // HAMBURGER MENU TOGGLE
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+</script>
 </body>
 </html>
