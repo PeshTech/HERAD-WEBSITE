@@ -5,35 +5,34 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   background-color: #fabfc063;
 }
 
-/* ================= NAV ================= */
-header nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  /* background-color: maroon; */
+/* ================= NAVBAR ================= */
+.site-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  /* box-shadow: 0 2px 5px rgba(0,0,0,0.3); */
-  
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: maroon;
 }
 
+/* Logo */
 .logo img {
   max-width: 200px;
   height: auto;
 }
 
+/* Nav menu - desktop */
 .nav-menu {
   display: flex;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: center; /* links centered horizontally */
 }
 
 .nav-menu ul {
@@ -47,14 +46,74 @@ header nav {
   color: white;
   font-size: 18px;
   padding: 8px 12px;
-  transition: 0.3s;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.nav-menu ul li a:hover {
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active {
   background-color: white;
   color: maroon;
   border-radius: 6px;
 }
+
+/* Hamburger toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* ================= MOBILE NAV ================= */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px; /* below header */
+    left: 0;
+    width: 100%;
+    background-color: maroon;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    text-align: center;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-menu ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-menu ul li a {
+    display: block;
+    padding: 15px 0;
+    font-size: 18px;
+  }
+
+  .nav-menu.active {
+    max-height: 1000px; /* full height to fit all links */
+  }
+}
+
+
+
 
 
 /* ================= CONTACT SECTION ================= */
@@ -100,11 +159,13 @@ header nav {
   color: #800000;
   margin-bottom: 1.5rem;
   text-align: center;
+  font-size: 40px;
 }
 
 .contact-form label {
   margin: 0.5rem 0 0.2rem;
   font-weight: 500;
+  font-size: 20px;
 }
 
 .contact-form input,

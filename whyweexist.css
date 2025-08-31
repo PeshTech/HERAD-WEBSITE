@@ -375,3 +375,12 @@ nav {
   .footer-sections { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
+
+
+@media (max-width: 600px) {
+  .footer-follow .social-icons {
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    gap: 10px;               /* spacing between icons */
+  }
+}

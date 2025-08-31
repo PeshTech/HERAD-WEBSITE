@@ -9,27 +9,35 @@
 </head>
 <body>
 
-  <!-- ================= HEADER / NAV ================= -->
   <header class="site-header">
-    <nav class="site-nav">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo">
-        </a>
-      </div>
-      <div class="nav-menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="About.html">About Us</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="impact.html">Impact</a></li>
-          <li><a href="whyweexist.html">Why We Exist</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-          <li><a href="services.html">Other Services</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <nav class="site-nav">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo">
+      </a>
+    </div>
+
+    <!-- Hamburger toggle button -->
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="whyweexist.html">Why We Exist</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="services.html">Other Services</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
 
   <!-- ===== CENTERED CONTACT FORM ===== -->
   <!-- ===== CENTERED CONTACT FORM ===== -->
@@ -99,14 +107,7 @@
             <a href="https://www.instagram.com/herad_exports" target="_blank"><img src="images/instagram1.png" alt="HERAD on Instagram" /></a>
             <a href="https://wa.me/256772593424" target="_blank"><img src="images/whatsap.png" alt="Chat with HERAD on WhatsApp" /></a>
           </div>
-          <h4>Payment Methods</h4>
-          <div class="payment-methods-icons">
-            <img src="images/airtel.png" alt="Pay with Airtel Money" class="airtel-logo" />
-            <img src="images/mtnicon.jpeg" alt="Pay with MTN Mobile Money" />
-            <img src="images/mastercard1.jpeg" alt="Pay with MasterCard" />
-            <img src="images/visa.png" alt="Visa card" />
-            <img src="images/handcash1.png" alt="Cash Accepted" />
-          </div>
+          
         </div>
       </div>
     </div>
@@ -120,22 +121,15 @@
   </footer>
 
 <script>
-  const form = document.getElementById('whatsappForm');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault(); // prevent normal form submission
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-
-    const phoneNumber = '256772593424'; // replace with your WhatsApp number, 
-    const text = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
-
-    window.open(whatsappURL, '_blank'); // opens WhatsApp in a new tab
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
   });
 </script>
+
+
 
 </body>
 </html>

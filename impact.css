@@ -6,62 +6,112 @@
 }
 body {
   background-color: #fabfc063;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 } 
 
-/* Style for the header nav */
-
+/* =================== HEADER NAV =================== */
 header nav {
-  position: fixed; /* Fixes the nav to the viewport */
-  top: 0; /* Stick it to the top */
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%; /* Full width */
-  z-index: 1000; /* Make sure it stays above other content */
-  background-color: maroon; /* Same background as before to avoid transparency */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for separation */
+  width: 100%;
+  z-index: 1000;
+  background-color: maroon;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   display: flex;
-  justify-content: space-between; /* Logo left, menu right */
-  align-items: center; /* Vertically center everything */
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
 }
 
-/* Logo container */
-.Herad-logo img {
-  width: 250px;
-  height: 90px;
-  object-fit: contain;
-} 
+/* Logo */
+.logo img {
+  max-width: 180px;
+  height: auto;
+}
 
-/* Navigation menu styling */
+/* Navigation menu */
+.nav-menu {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
 .nav-menu ul {
   list-style: none;
   display: flex;
-  gap: 20px; /* Space between links */
-} 
+  gap: 25px; /* space between links on desktop */
+}
 
-/* Each menu link */
 .nav-menu ul li a {
   text-decoration: none;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   padding: 8px 12px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
-.logo img {
-  max-width: 200px;
-  height: auto;
-} 
 
-/* Hover effect */
 .nav-menu ul li a:hover {
   background-color: white;
-  border-radius: 8px;
   color: maroon;
-  padding: 20px 20px;
+  border-radius: 8px;
 }
+
+/* Hamburger toggle */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* =================== MOBILE STYLES =================== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex; /* show toggle */
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%; /* dropdown appears below nav */
+    left: 0;
+    width: 100%;
+    background-color: maroon;
+    display: none; /* hidden by default */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .nav-menu.active {
+    display: flex; /* show when toggle clicked */
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 20px; /* vertical spacing between links */
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu ul li a {
+    font-size: 25px;        /* bigger for mobile */
+    padding: 12px 20px;     /* more touch-friendly */
+  }
+}
+
 /* =================== IMPACT SECTION =================== */
 .content {
-  padding-top: 90px; /* offset for fixed nav */
+  padding-top: 100px; /* offset for fixed nav */
 }
 
 .impact-grid {
@@ -97,7 +147,7 @@ header nav {
   bottom: 20px;
   left: 20px;
   color: white;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
   max-width: 80%;
 }
 
@@ -111,60 +161,36 @@ header nav {
   margin-top: 8px;
 }
 
-/* Large Hero (full-width image with centered overlay) */
+/* Large hero */
 .impact-card.large {
-  position: relative;
-  width: 100%;
-  height: 70vh; /* Adjust height as needed (70% of viewport) */
-  grid-column: span 2; /* Ensures it spans full grid width on desktop */
-  border-radius: 0; /* Make it a clean banner */
+  height: 70vh;
+  border-radius: 0;
   overflow: hidden;
 }
 
 .impact-card.large img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(60%); /* Darken image for text visibility */
+  filter: brightness(60%);
 }
 
 .impact-card.large .overlay {
-  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center both vertically & horizontally */
+  transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
   max-width: 80%;
 }
 
 .impact-card.large .overlay h2 {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2rem;
   margin-bottom: 15px;
 }
 
 .impact-card.large .overlay p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.4;
 }
 
-
-/* Responsive Layout */
-@media (min-width: 768px) {
-  .impact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .impact-card.large {
-    grid-column: span 2;
-  }
-}
-
-/* ------------------------------
-   FOOTER
--------------------------------- */
-/* Define CSS Variables */
+/* =================== FOOTER =================== */
 :root {
   --brand-white: #ffffff;
   --text-light: #f0f0f0;
@@ -172,11 +198,10 @@ header nav {
   --text-muted: #bfbfbf;
 }
 
-/* FOOTER STYLES */
 .footer {
   background-color: #800000;
   color: var(--brand-white);
-  padding: 40px 0 20px;
+  padding: 40px 20px 20px;
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
@@ -184,7 +209,6 @@ header nav {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -198,10 +222,8 @@ header nav {
 }
 
 .footer-logo {
-  padding-top: 20px;
   max-height: 90px;
   width: auto;
-  object-fit: contain;
 }
 
 .footer-sections {
@@ -221,7 +243,6 @@ header nav {
 }
 
 .footer-section p {
-  margin: 0 0 8px 0;
   color: var(--text-light);
   font-size: 0.875rem;
 }
@@ -238,45 +259,23 @@ header nav {
 
 .footer-follow .social-icons {
   display: flex;
+  justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
 .footer-follow .social-icons a img {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
   object-fit: contain;
-  background-color: rgb(240, 38, 38);
+  background-color: rgb(240,38,38);
   padding: 5px;
   transition: background-color 0.3s;
-  display: flex;
 }
 
 .footer-follow .social-icons a img:hover {
-  background-color: black;
-}
-
-.footer-follow .payment-methods-icons {
-  display: flex;
-  gap: 10px;
-  /* overflow-x: auto; */
-  /* padding-bottom: 5px; */
-}
-
-.footer-follow .payment-methods-icons img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color: rgb(240, 38, 38);
-  /* padding: 5px; */
-  opacity: 0.85;
-  transition: opacity 0.3s ease, background-color 0.3s ease;
-}
-
-.footer-follow .payment-methods-icons img:hover {
-  opacity: 1;
   background-color: black;
 }
 
@@ -296,32 +295,90 @@ header nav {
 .footer-bottom a {
   color: var(--text-light);
   text-decoration: none;
-  margin-left: 20px;
 }
 
 .footer-bottom a:hover {
   color: var(--brand-white);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* =================== RESPONSIVE =================== */
+
+/* Medium screens */
+@media (min-width: 768px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .impact-card.large {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: maroon;
+    border-top: 1px solid white;
+  }
+
   .footer-sections {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+@media (max-width: 500px) {
+  .impact-card.large .overlay h2 {
+    font-size: 1.5rem;
   }
+  .impact-card.large .overlay p {
+    font-size: 1rem;
+  }
+
   .footer-sections {
     grid-template-columns: 1fr;
-    width: 100%;
-  }
-  .footer-bottom {
-    flex-direction: column;
     text-align: center;
+  }
+
+  .footer-follow .social-icons {
+    justify-content: center;
+  }
+
+  .footer-logo-container {
+  width: 100%;        /* take full width */
+  text-align: center; /* center the logo horizontally */
+  margin-bottom: 20px; /* optional spacing below logo */
+  flex-shrink: 0;     /* keep logo size intact */
+}
+
+}
+
+/* Center footer-bottom on small screens */
+@media (max-width: 500px) {
+  .footer-bottom {
+    flex-direction: column;   /* stack items vertically */
+    align-items: center;      /* center horizontally */
+    text-align: center;       /* center text inside <p> and links */
+    gap: 10px;                /* spacing between copyright & links */
+  }
+
+  .footer-bottom a {
+    margin: 0 5px;            /* spacing between links */
+  }
+
+  .footer-logo-container {
+    text-align: center;       /* ensure logo above footer-bottom is centered too */
+    margin-bottom: 20px;      /* optional spacing above links */
   }
 }

@@ -411,3 +411,13 @@ nav {
   .hero-section { min-height: 500px; }
   .hero-overlay h1 { font-size: 1.8rem; }
 }
+
+
+
+@media (max-width: 600px) {
+  .footer-follow .social-icons {
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    gap: 10px;               /* spacing between icons */
+  }
+}
