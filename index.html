@@ -31,6 +31,13 @@
         </a>
       </div>
 
+      <!-- Hamburger menu button -->
+  <div class="nav-toggle" aria-label="Menu" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
       <!-- Right side navigation links -->
       <div class="nav-links">
         <ul>
@@ -165,19 +172,7 @@
             </a>
           </div>
 
-          <h4>Payment Methods</h4>
-          <div class="payment-methods-icons">
-            <!-- Airtel -->
-            <img src="images/airtel.png" alt="Pay with Airtel Money" class="airtel-logo" />
-            <!-- MTN -->
-            <img src="images/mtnicon.jpeg" alt="Pay with MTN Mobile Money" />
-            <!-- MasterCard -->
-            <img src="images/mastercard1.jpeg" alt="Pay with MasterCard" />
-            <!-- Other Payment -->
-            <img src="images/visa.png" alt="Visa card" />
-            <!-- Cash -->
-            <img src="images/handcash1.png" alt="Cash Accepted" />
-          </div>
+          
         </div>
       </div><!-- /.footer-sections -->
     </div><!-- /.footer-content -->
@@ -191,5 +186,15 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  const toggleBtn = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>

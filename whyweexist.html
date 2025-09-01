@@ -10,27 +10,30 @@
 <body>
 
   <!-- ================= HEADER / NAV ================= -->
-  <header class="site-header">
-    <nav class="site-nav">
-      <!-- Logo -->
+  <header>
+    <nav>
       <div class="logo">
         <a href="index.html">
-          <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo">
+          <img src="images/heradlogo.jpeg" alt="HERAD logo" />
         </a>
       </div>
-
-      <!-- Navigation links -->
-      <div class="nav-menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="About.html">About Us</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="impact.html">Impact</a></li>
-          <li><a href="whyweexist.html">Why We Exist</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="services.html">Other Services</a></li>
-        </ul>
+  
+      <!-- Hamburger -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
+  
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="whyweexist.html">Why We Exist</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="services.html">Other Services</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -38,6 +41,7 @@
   <div class="main-content">
     <div class="Exist-container">
       <h1>Why We Exist</h1>
+      </div>
       <div class="fullscreen-slider">
         <img src="images/job-creation-cassava.png" alt="Job Creation">
         <img src="images/raising-incomes-cassava.png" alt="Raising Incomes">
@@ -111,19 +115,7 @@
             </a>
           </div>
 
-          <h4>Payment Methods</h4>
-          <div class="payment-methods-icons">
-            <!-- Airtel -->
-            <img src="images/airtel.png" alt="Pay with Airtel Money" class="airtel-logo" />
-            <!-- MTN -->
-            <img src="images/mtnicon.jpeg" alt="Pay with MTN Mobile Money" />
-            <!-- MasterCard -->
-            <img src="images/mastercard1.jpeg" alt="Pay with MasterCard" />
-            <!-- Other Payment -->
-            <img src="images/visa.png" alt="Visa card" />
-            <!-- Cash -->
-            <img src="images/handcash1.png" alt="Cash Accepted" />
-          </div>
+          
         </div>
       </div><!-- /.footer-sections -->
     </div><!-- /.footer-content -->
@@ -138,5 +130,15 @@
     </div>
   </footer>
 
+  <script>
+    // HAMBURGER MENU TOGGLE
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+  </script>
 </body>
 </html>

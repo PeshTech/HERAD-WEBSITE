@@ -9,51 +9,61 @@
 </head>
 <body>
 
-  <!-- ================= HEADER / NAV ================= -->
   <header class="site-header">
-    <nav class="site-nav">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo">
-        </a>
-      </div>
-      <div class="nav-menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="About.html">About Us</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="impact.html">Impact</a></li>
-          <li><a href="whyweexist.html">Why We Exist</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-          <li><a href="services.html">Other Services</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <nav class="site-nav">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo">
+      </a>
+    </div>
+
+    <!-- Hamburger toggle button -->
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="whyweexist.html">Why We Exist</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="services.html">Other Services</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
 
   <!-- ===== CENTERED CONTACT FORM ===== -->
-  <section class="contact-section">
-    <div class="contact-container">
-      <div class="contact-form">
-        <h2>Send Us a Message</h2>
-        <form action="#" method="POST">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your full name" required>
+  <!-- ===== CENTERED CONTACT FORM ===== -->
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-form">
+      <h2>Get In Touch</h2>
+      <form id="whatsappForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your email address" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required>
 
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
 
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer" role="contentinfo">
@@ -97,14 +107,7 @@
             <a href="https://www.instagram.com/herad_exports" target="_blank"><img src="images/instagram1.png" alt="HERAD on Instagram" /></a>
             <a href="https://wa.me/256772593424" target="_blank"><img src="images/whatsap.png" alt="Chat with HERAD on WhatsApp" /></a>
           </div>
-          <h4>Payment Methods</h4>
-          <div class="payment-methods-icons">
-            <img src="images/airtel.png" alt="Pay with Airtel Money" class="airtel-logo" />
-            <img src="images/mtnicon.jpeg" alt="Pay with MTN Mobile Money" />
-            <img src="images/mastercard1.jpeg" alt="Pay with MasterCard" />
-            <img src="images/visa.png" alt="Visa card" />
-            <img src="images/handcash1.png" alt="Cash Accepted" />
-          </div>
+          
         </div>
       </div>
     </div>
@@ -116,6 +119,17 @@
       </div>
     </div>
   </footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
+
+
 
 </body>
 </html>
