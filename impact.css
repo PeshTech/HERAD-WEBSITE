@@ -46,7 +46,7 @@ header nav {
 .nav-menu ul li a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 25px;
   padding: 8px 12px;
   transition: all 0.3s ease;
 }
@@ -152,12 +152,12 @@ header nav {
 }
 
 .impact-card .overlay h2 {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
 }
 
 .impact-card .overlay p {
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 8px;
 }
 
@@ -181,12 +181,12 @@ header nav {
 }
 
 .impact-card.large .overlay h2 {
-  font-size: 2rem;
+  font-size: 40px;
   margin-bottom: 15px;
 }
 
 .impact-card.large .overlay p {
-  font-size: 1.2rem;
+  font-size: 25px;
   line-height: 1.4;
 }
 

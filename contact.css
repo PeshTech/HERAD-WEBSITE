@@ -44,7 +44,7 @@ body {
 .nav-menu ul li a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 25px;
   padding: 8px 12px;
   transition: background-color 0.2s, color 0.2s;
 }
@@ -103,12 +103,14 @@ body {
 
   .nav-menu ul li a {
     display: block;
-    padding: 15px 0;
-    font-size: 18px;
+    padding: 10px 0;
+    font-size: 20px;
   }
 
   .nav-menu.active {
     max-height: 1000px; /* full height to fit all links */
+    margin-top: 30px;
+    padding-top: 10px;
   }
 }
 
@@ -365,5 +367,14 @@ body {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .footer-follow .social-icons {
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    gap: 10px;               /* spacing between icons */
   }
 }
