@@ -14,7 +14,7 @@ html, body {
   flex-direction: column;
   line-height: 1.6;
   color: white;
-  background-image: url('/images/background-cassava.jpeg');
+  background-image: url('images/background-cassava.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
