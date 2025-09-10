@@ -324,6 +324,7 @@ main h1 {
   nav {
     height: auto;
     flex-direction: row;
+    max-width: 100%;
   }
 
   /*  Hamburger stays top-right */
