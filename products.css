@@ -19,6 +19,7 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden; /* prevent horizontal scroll */
 }
 
 main {
@@ -84,6 +85,7 @@ nav {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 200;
 }
 
 .nav-toggle span {
@@ -322,51 +324,50 @@ main h1 {
 /* Mobile Phones */
 @media (max-width: 768px) {
   nav {
-    height: auto;
-    flex-direction: row;
     max-width: 100%;
+    padding: 0;
+    flex-direction: row;
   }
 
-  /*  Hamburger stays top-right */
+  /* Hamburger stays top-right */
   .nav-toggle {
     display: flex;
     position: absolute;
     right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 200;
+    top: 20px;
   }
 
-  /*  Dropdown menu appears BELOW header */
+  /* Full-screen dropdown menu */
   .nav-links {
     flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    background: #800000;
-    border-radius: 0 0 5px 5px;
-    position: absolute;
-    top: 100%;
+    align-items: center;
+    width: 100vw;
+    position: fixed;
+    top: 0;
     left: 0;
-    padding: 0 15px;
-    max-height: 0;
+    height: 100vh;
+    background: #800000;
+    z-index: 150;
+    padding-top: 60px; /* space for hamburger */
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
   }
 
   .nav-links.active {
-    max-height: 600px;
-    padding: 5px 10px;
+    transform: translateX(0);
   }
 
   .nav-links li {
     width: 100%;
-   
   }
 
   .nav-links a {
     display: block;
     width: 100%;
     text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
   }
 
   .product-image img {
@@ -419,5 +420,9 @@ main h1 {
 
   .product-text {
     font-size: 1rem;
+  }
+
+  main {
+    padding: 0 10px;
   }
 }
